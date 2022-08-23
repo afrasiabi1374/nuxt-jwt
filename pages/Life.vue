@@ -4,16 +4,18 @@
         Life cycle
     </h1>
     <button @click="c++">c++ {{c}}</button>
+    <div>
+        {{ name }}
+        <br>
+        <h2>
+            {{ title }}
+        </h2>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-    data(){
-        return{
-            c:0
-        }
-    },
     beforeCreate(){
         console.log('beforeCreate');
     },
@@ -37,7 +39,21 @@ export default {
     },
     destroyed(){
         console.log('destroyed');
-    }
+    },
+    async asyncData({$axios, $store}){
+        const response = await $axios.$get(
+            "https://jsonplaceholder.typicode.com/todos/1"
+        )
+        return {
+            title: response.title
+        }
+    },
+    data(){
+        return{
+            name: 'ali',
+            c: 0
+        }
+    },
 }
 </script>
 <style>

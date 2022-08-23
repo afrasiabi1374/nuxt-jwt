@@ -8,6 +8,12 @@
     <p>
       <nuxt-link to="/events">emit</nuxt-link>
     </p>
+    <p>
+      <nuxt-link to="/product/Samsong-Galaxy-S8">router param</nuxt-link>
+    </p>
+    <p>
+      <nuxt-link to="/search/ali/reza/samsong?user=ali.ali2">infinite route</nuxt-link>
+    </p>
   </div>
 </template>
 
