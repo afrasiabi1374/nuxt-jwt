@@ -10,7 +10,7 @@
 export default {
     name: 'NuxtFetch',
     fetch(){
-        this.
+        
     }
 }
 </script>
