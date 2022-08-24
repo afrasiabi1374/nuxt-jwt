@@ -14,6 +14,14 @@
     <p>
       <nuxt-link to="/search/ali/reza/samsong?user=ali.ali2">infinite route</nuxt-link>
     </p>
+    <p>
+      <nuxt-link to="/NuxtFetch">NuxtFetch and error handling</nuxt-link>
+    </p>
+    <p>
+      <nuxt-link to="/SearchTodo">
+        SearchTodo
+      </nuxt-link>
+    </p>
   </div>
 </template>
 
@@ -22,7 +30,8 @@ export default {
   name: 'IndexPage',
   data() {
     return {
-      initial: 4
+      initial: 4,
+      list: []
     }
   }
 }
