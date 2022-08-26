@@ -22,6 +22,11 @@
         SearchTodo
       </nuxt-link>
     </p>
+    <p>
+      <nuxt-link to="/nuxt-middleware">
+        nuxt-middleware
+      </nuxt-link>
+    </p>
   </div>
 </template>
 
