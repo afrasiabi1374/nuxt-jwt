@@ -53,6 +53,7 @@ export default {
   build: {
   },
   router: {
+    middleware: ['apiMiddleware'],
     parseQuery(query){
       return require('qs').parse(query)
     },

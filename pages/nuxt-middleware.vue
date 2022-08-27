@@ -8,7 +8,15 @@
 <script>
 export default {
     name: 'nuxtMiddleware',
-    middleware: ['auth']
+    // middleware: ['auth']
+    fetch(){
+        return new Promise((resolve) => {
+            setTimeout(()=>{
+                console.log("fetch resolved")
+                resolve(true)
+            }, 3000)
+        })
+    }
 }
 </script>
 <style>

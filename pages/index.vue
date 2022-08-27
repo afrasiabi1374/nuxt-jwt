@@ -23,9 +23,16 @@
       </nuxt-link>
     </p>
     <p>
-      <nuxt-link to="/nuxt-middleware">
-        nuxt-middleware
-      </nuxt-link>
+      <nuxt-link :to="{name: 'nuxt-middleware'}">nuxt middleware</nuxt-link>
+    </p>
+    <p>
+      <nuxt-link to="/validate/414">nuxt Vlidate life-cycle<span style="color: green;"> Custom ERROR</span></nuxt-link>
+    </p>
+    <p>
+      <nuxt-link to="/validate/12ali">nuxt Vlidate life-cycle <span style="color: red;">Default ERROR</span></nuxt-link>
+    </p>
+    <p>
+      <nuxt-link to="/form"> v-model </nuxt-link>
     </p>
   </div>
 </template>
