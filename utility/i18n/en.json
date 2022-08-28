@@ -1,0 +1,16 @@
+{
+    "messages": {
+      "validation": {
+        "required": "{_field_} is required"
+      },
+      "placeholder": {
+        "default": "type {0}...",
+        "selected": "select {0}..."
+      },
+      "number": "number",
+      "logout": "logout",
+      "search": "search",
+      "firstName": "firstName",
+      "lastName": "lastName"
+    }
+  }
