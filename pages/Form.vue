@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>form</h1>
-    <label>firstName((custom input)) : </label>
+    <h2>کامپوننت ها داخل پوشه یوآی هستند.</h2>
+    <label>firstName((custom input)) by watcher: </label>
     <ui-app-text-input v-model="firstName" />
     <br>
     <h1>app number picker</h1>

@@ -34,6 +34,13 @@
     <p>
       <nuxt-link to="/form"> v-model </nuxt-link>
     </p>
+    <p>
+      <nuxt-link to="/plugin">
+        <b>
+          plugin
+        </b>
+      </nuxt-link>
+    </p>    
   </div>
 </template>
 

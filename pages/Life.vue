@@ -48,6 +48,12 @@ export default {
             title: response.title
         }
     },
+    fetch() {
+        console.log('fetch hook!')
+    },
+    middleware(){
+       console.log('middleware'); 
+    },
     data(){
         return{
             name: 'ali',

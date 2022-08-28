@@ -24,7 +24,7 @@ export default {
             this.$emit("change", this.value + 1)
         },
         minus(){
-            if (this.value-1 >= this.minValue) {
+            if (this.value - 1 >= this.minValue) {
                 this.$emit("change", this.value - 1)
             }
         }
