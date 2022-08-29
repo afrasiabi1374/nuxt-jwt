@@ -32,7 +32,7 @@
       <nuxt-link to="/validate/12ali">nuxt Vlidate life-cycle <span style="color: red;">Default ERROR</span></nuxt-link>
     </p>
     <p>
-      <nuxt-link to="/form"><b>v-model and set v-model to a component</b>  </nuxt-link>
+      <nuxt-link to="/form"><b>پروژه اول</b>  </nuxt-link>
     </p>
     <p>
       <nuxt-link to="/plugin">
@@ -43,6 +43,9 @@
     </p>    
     <p>
       <nuxt-link to="/VeeValidatePage">veevalidate خام</nuxt-link>
+    </p>
+    <p>
+  
     </p>
   </div>
 </template>

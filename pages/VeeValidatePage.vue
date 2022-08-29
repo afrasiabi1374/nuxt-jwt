@@ -8,12 +8,12 @@
             <ui-app-text-input type="number" v-model="number"></ui-app-text-input>
             <div v-if="errors && errors.length > 0">{{errors[0]}}</div>
           </ValidationProvider>
-          <hr/>
-  
+          
           <button type="submit" >submit-FRM</button>
           <button type="button" @click="reset">Reset Validation</button>
         </form>
       </validation-observer>
+      <hr/>
   
   
   

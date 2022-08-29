@@ -1,61 +1,78 @@
 <template>
   <div>
     <h1>form</h1>
-    <validation-observer v-slot="{handleSubmit, reset}">
-      <form @submit.prevent="handleSubmit(onSubmit)">
-        <ValidationProvider name="number" rules="even" v-slot="{ errors }">
-          <label>number: </label>
-          <ui-app-text-input type="number" v-model="number"></ui-app-text-input>
-          <div v-if="errors && errors.length > 0">{{errors[0]}}</div>
-        </ValidationProvider>
-        <hr/>
-
-        <button type="submit" >submit-FRM</button>
-        <button type="button" @click="reset">Reset Validation</button>
-      </form>
-    </validation-observer>
-
-
-
-
-
-
-    <h2>کامپوننت ها داخل پوشه یوآی هستند.</h2>
-    <label>firstName((custom input)) by watcher: </label>
-    <ui-app-text-input v-model="firstName" />
-    <br>
-    <h1>app number picker</h1>
-    <ui-app-number-picker :minValue="0"  v-model="count"></ui-app-number-picker>
+    <div v-if="response.title&&response.body">
+      <div>title:</div>
+      <div>{{response.title}}</div>
+      
+      <div>body:</div>
+      <div>{{response.body}}</div>      
+    </div>
+    <hr />
+    <ui-app-form :on-submit="onSubmit" ref="form">
+      <div>
+        <label>title : </label>
+        <ui-app-text-input
+          v-model="form.title"
+          :placeholder="$t('placeholder.default', [$t('title')])"
+          name="title"
+          rules="required"
+        >
+        </ui-app-text-input>
+      </div>
+      <div>
+        <label>body : </label>
+        <ui-app-text-input
+          v-model="form.body"
+          name="body"
+          rules="required"
+        >
+        </ui-app-text-input>      
+      </div>
+      <div>
+        <label>user id : </label>
+        <ui-app-text-input
+          v-model="form.userId"
+          type="number"
+          name="userId"
+          rules="required"
+        >
+        </ui-app-text-input>      
+      </div>
+      <button type="submit">submit form</button>
+    </ui-app-form>
   </div>
 </template>
 
 <script>
-  import { ValidationProvider, ValidationObserver, extend } from 'vee-validate';
-  extend('even', value => {
-    return value % 2 === 0
-  })
-
   export default {
   name: "Form",
-  components: {
-    ValidationProvider,
-    ValidationObserver
-  },
   data() {
     return {
-     firstName: '',
-     count: 5,
-     number: 0
+      form: {
+        title: '',
+        body: '',
+        userId: ''
+      },
+      response: {title:'', body: ''}
     }
   },
-  watch:{
-    firstName(value){
-      console.log('first name is : ', value);
-    }
-  },
+
   methods:{ 
     onSubmit(){
-      alert('submit is called!')
+      this.$axios
+      .$post('https://jsonplaceholder.typicode.com/posts', this.form)
+      .then((response)=>{
+        this.response = response
+        // ریکوست اومد فرم ریست میشه.
+        this.form.title = '',
+        this.form.body = '',
+        this.form.userId = ''
+        this.$refs.form.reset()
+      })
+      .catch((e)=>{
+        console.log(e)
+      })
     }
   }
 }

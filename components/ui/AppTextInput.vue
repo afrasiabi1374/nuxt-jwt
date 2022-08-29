@@ -1,20 +1,37 @@
 <template>
-  <input  type="text" :value="value" v-bind="$attrs" v-on="{...$listeners, input: inputFunc}" >
+  <validation-provider v-slot="{ errors }" :name="name" :rules="rules">
+    <div>
+      <input 
+        v-bind="$attrs"
+        :value="value"
+        type="text"
+        v-on="{ ...$listeners, input: inputFunc }"
+      />
+    </div>
+    <div v-if="errors && errors.length > 0">{{ errors[0] }}</div>
+  </validation-provider>
 </template>
 
 <script>
+import { ValidationProvider } from 'vee-validate';
 export default {
   name: 'AppTextInput',
-  // تغیر نامک پراپ وی مدل
-  // model:{
-  //   event: 'change',
-  //   prop: 'value'
-  // },
+  components:{
+    ValidationProvider
+  },
   props:{
     value: {
       type: String,
+      default: 'default value',
+    },
+    name: {
+      type: String,
       default: '',
-    }
+    },
+    rules: {
+      type: String,
+      default: '',
+    },
   },
   methods:{
     inputFunc(e){

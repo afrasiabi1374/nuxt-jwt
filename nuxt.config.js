@@ -23,7 +23,8 @@ export default {
     // {src:'~/plugins/myPlugin', mode: 'client'},
     '~/plugins/myPlugin',
     '~/plugins/veeValidate',
-    '~/plugins/i18n'
+    '~/plugins/i18n',
+    '~/plugins/axios'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
