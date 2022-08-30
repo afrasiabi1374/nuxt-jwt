@@ -60,19 +60,19 @@
 
   methods:{ 
     onSubmit(){
-      this.$axios
-      .$post('https://jsonplaceholder.typicode.com/posts', this.form)
-      .then((response)=>{
-        this.response = response
-        // ریکوست اومد فرم ریست میشه.
-        this.form.title = '',
-        this.form.body = '',
-        this.form.userId = ''
-        this.$refs.form.reset()
-      })
-      .catch((e)=>{
-        console.log(e)
-      })
+      const cc = { ref: this.$refs.form }
+      this.$api._post('/post', {}, { cc })
+      .then(()=>{})
+
+      // .then((response)=>{
+      //   // ریکوست اومد فرم ریست میشه.
+      //   this.form.title = '',
+      //   this.form.body = '',
+      //   this.form.userId = ''
+      //   // متد ریست ارور وی ولیدیت
+      //   this.$refs.form.reset()
+      //   this.response = response
+      // })
     }
   }
 }

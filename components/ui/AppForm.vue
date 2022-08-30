@@ -24,6 +24,11 @@ export default {
     methods: {
         reset(){
             this.$refs.validation.reset()
+        },
+        addError(key, value){
+            this.$refs.validation.setErrors({
+                [key]: value
+            })
         }
     }
 }

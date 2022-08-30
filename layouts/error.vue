@@ -4,9 +4,9 @@
     <h2>
         {{ error.statusCode }}
     </h2>
-    <h3>
+    <h2 style="color: tomato;">
         {{ error.message }}
-    </h3>
+    </h2>
   </div>
 </template>
 
