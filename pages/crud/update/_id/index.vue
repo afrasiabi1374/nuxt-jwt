@@ -46,7 +46,7 @@
 
 <script>
   export default {
-  name: "Form",
+  name: "Create",
   data() {
     return {
       form: {
@@ -61,19 +61,24 @@
   methods:{ 
     onSubmit(){
       const cc = { ref: this.$refs.form }
-      this.$api._post('/post', {}, { cc })
-      .then(()=>{})
-
-      // .then((response)=>{
-      //   // ریکوست اومد فرم ریست میشه.
-      //   this.form.title = '',
-      //   this.form.body = '',
-      //   this.form.userId = ''
-      //   // متد ریست ارور وی ولیدیت
-      //   this.$refs.form.reset()
-      //   this.response = response
-      // })
+      this.$axios
+      .$post('https://jsonplaceholder.typicode.com/posts', this.form)
+      .then((response)=>{
+        // ریکوست اومد فرم ریست میشه.
+        this.form.title = '',
+        this.form.body = '',
+        this.form.userId = ''
+        // متد ریست ارور وی ولیدیت
+        this.$refs.form.reset()
+        this.response = response
+      })
     }
+  },
+  async fetch(){
+    const response = await this.$axios
+    .$get(`https://jsonplaceholder.typicode.com/posts/${this.$route.params.id}`)
+    this.form.title = response.title
+    this.form.body = response.body
   }
 }
 </script>
