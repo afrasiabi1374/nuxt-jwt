@@ -28,7 +28,7 @@ export default {
     return this.$api._get('/posts')
     .then((res)=>{
       console.log('res ',res)
-      if (res !== undefined) {      
+      if (res !== undefined) {   
         console.log('res is OK!',res)  
         this.list = res
       }

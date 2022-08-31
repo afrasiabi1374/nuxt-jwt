@@ -1,5 +1,6 @@
 import qs from "qs"
 import { handleErrors, handleResponse } from "../helpers/responseHelper"
+// کانتکس رو توی اکسیوس دریافتش میکنیم برای پاس دادن به تابع برای کارای مختلف
 export default function ({ $axios, ...context }, inject) {
     // Create a custom axios instance
     const api = $axios.create({
