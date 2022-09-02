@@ -45,7 +45,9 @@
       <nuxt-link to="/VeeValidatePage">veevalidate خام</nuxt-link>
     </p>
     <p>
-  
+      <nuxt-link to="/crud">
+        CRUD see all posts
+      </nuxt-link>
     </p>
   </div>
 </template>

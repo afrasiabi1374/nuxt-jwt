@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="[$fetchState.pending ? 'loading' : '']">
     <h1>form</h1>
     <div v-if="response.title&&response.body">
       <div>title:</div>
@@ -57,7 +57,7 @@
       response: {title:'', body: ''}
     }
   },
-
+  fetchOnServer: false,
   methods:{ 
     onSubmit(){
       const cc = { ref: this.$refs.form }
@@ -83,6 +83,8 @@
 }
 </script>
 
-<style>
-
+<style scoped lang="scss">
+  .loading {
+    opacity: .3;
+  }
 </style>
