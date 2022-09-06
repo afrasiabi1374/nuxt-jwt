@@ -49,6 +49,21 @@
         CRUD see all posts
       </nuxt-link>
     </p>
+    <p>
+      <nuxt-link to="/asynccomponents">
+        async-components
+      </nuxt-link>
+    </p>
+    <p>
+      <nuxt-link to="/mixins">
+        mixins
+      </nuxt-link>
+    </p>
+    <p>
+      <nuxt-link to="/vuex">
+        vuex
+      </nuxt-link>
+    </p>
   </div>
 </template>
 
