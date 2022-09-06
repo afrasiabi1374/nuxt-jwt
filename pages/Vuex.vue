@@ -8,9 +8,13 @@
         </div>
         <button @click="plusCounter">
             plus counter
+            {{getLoading}}
         </button>
         <hr />
-        <ul>
+        <template v-if="getLoading">
+            <h1>Loading...</h1>
+        </template>
+        <ul v-else>
             <li v-for="item in getData" :key="item.id">
                 {{item.title}}
             </li>
@@ -31,6 +35,9 @@ export default {
         },
         getData() {
             return this.$store.getters.getData
+        },
+        getLoading() {
+            return this.$store.getters.getLoading
         }
     },
     methods:{
