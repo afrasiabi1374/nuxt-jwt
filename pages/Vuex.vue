@@ -23,21 +23,17 @@
     </div>
 </template>
 <script>
+import {mapGetters} from 'vuex'
 export default {
     name: 'Vuex',
     fetch(){
         console.log(13744444);
-        return this.$store.dispatch('fetchData')
+        return this.$store.dispatch('albums/fetchData')
     },
     computed: {
+        ...mapGetters('albums', ['getLoading', 'getData']),
         getCounter() {
             return this.$store.state.counter
-        },
-        getData() {
-            return this.$store.getters.getData
-        },
-        getLoading() {
-            return this.$store.getters.getLoading
         }
     },
     methods:{
