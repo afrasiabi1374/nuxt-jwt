@@ -41,7 +41,8 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    'nuxt-i18n'
+    'nuxt-i18n',
+    'cookie-universal-nuxt'
   ],
   i18n: {
     locales:[
