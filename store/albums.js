@@ -12,6 +12,9 @@ export const getters = {
     getLoading(state){
         console.log(state.loading)
         return state.loading
+    },
+    getItemById: (state) => (id) => {
+        return state.data.find(item => item.id === id)?.title
     }
 }
 
