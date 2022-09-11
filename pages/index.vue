@@ -64,6 +64,11 @@
         vuex
       </nuxt-link>
     </p>
+    <p>
+      <nuxt-link to="/token">
+        saveToken
+      </nuxt-link>
+    </p>
   </div>
 </template>
 
