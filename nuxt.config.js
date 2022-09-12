@@ -20,12 +20,12 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    // {src:'~/plugins/myPlugin', mode: 'client'},
-    '~/plugins/myPlugin',
     '~/plugins/veeValidate',
     '~/plugins/i18n',
     '~/plugins/axios',
-    '~/plugins/GlobalMixin',
+    // این پلاگین میاد چک میکنه روتمون شامل این ریجکس هست یانه؟
+    '~/plugins/checkRoutes',
+
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -71,7 +71,12 @@ export default {
       lang: 'en'
     }
   },
-
+  env: {
+    authRoutes: [
+      '/crud',
+      { regex: [/\profile/.source()] }
+    ]
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ['vee-validate/dist/rules']
