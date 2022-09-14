@@ -25,7 +25,7 @@ export default {
     '~/plugins/axios',
     // این پلاگین میاد چک میکنه روتمون شامل این ریجکس هست یانه؟
     '~/plugins/checkRoutes',
-
+    
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -74,7 +74,8 @@ export default {
   env: {
     authRoutes: [
       '/crud',
-      { regex: [/\profile/.source()] }
+      { regex: [/\/profile/.source] },
+      { regex: [/\/user\//.source] }
     ]
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -82,7 +83,7 @@ export default {
     transpile: ['vee-validate/dist/rules']
   },
   router: {
-    middleware: ['apiMiddleware'],
+    middleware: ['load-auth'],
     parseQuery(query){
       return require('qs').parse(query)
     },
