@@ -5,6 +5,7 @@ export default async function ({
     $checkRoutes,
     // route
 }) {
+    //$checkRoutes  پلاگین 
     if ($checkRoutes.shouldInitAuth()) {
         await store.dispatch('auth/initAuth')
         const isAuthenticated = store.getters['auth/isAuthenticated']
