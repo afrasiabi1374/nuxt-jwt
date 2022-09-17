@@ -42,7 +42,8 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     'nuxt-i18n',
-    'cookie-universal-nuxt'
+    'cookie-universal-nuxt',
+    '@nuxtjs/proxy'
   ],
   i18n: {
     locales:[
@@ -71,7 +72,11 @@ export default {
       lang: 'en'
     }
   },
+  proxy: {
+    '/api': 'https://acm.academyland.net/', //use username:user and password:123456 for authentication
+  },
   env: {
+    baseUrl: 'http://' + 'localhost:3000' + '/api/web',
     authRoutes: [
       '/crud',
       { regex: [/\/profile/.source] },
