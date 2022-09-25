@@ -17,5 +17,7 @@ export const handleErrors = (e, cc, {error}) => {
         const data = e.response.data
         console.log("data ERR==>>", data)
         error({status: 500, message: data || "خطای دیفالت اینجا عمو موک لب توکار نیست:)))"})
+    }else if(cc.onError) {
+      cc.onError(e?.response)
     }
 }

@@ -16,7 +16,7 @@ export default function ({ $axios, ...context }, inject) {
     })
   
     // Set baseURL to something different
-    api.setBaseURL('https://978v6.mocklab.io')
+    api.setBaseURL(process.env.baseURL)
     // POST METHOD_!
     api._post = function(url, body, config = {}){
       const {cc, ...requestConfig} = config
@@ -42,7 +42,6 @@ export default function ({ $axios, ...context }, inject) {
         handleErrors(e, cc, context)
       })
     }    
-
 
     // Inject to context as $api
     inject('api', api)

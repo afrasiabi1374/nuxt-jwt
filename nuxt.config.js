@@ -88,13 +88,13 @@ export default {
     transpile: ['vee-validate/dist/rules']
   },
   router: {
-    middleware: ['load-auth'],
-    parseQuery(query){
+    middleware: ['load-auth', 'load-user-data'],
+    parseQuery(query) {
       return require('qs').parse(query)
     },
-    stringifyQuery(query){
+    stringifyQuery(query) {
       const result = require('qs').stringify(query)
-      return result ? '?'+result : ''
-    }
-  }
+      return result ? '?' + result : ''
+    },
+  },
 }

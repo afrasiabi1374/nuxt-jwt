@@ -4,7 +4,7 @@
       <input 
         v-bind="$attrs"
         :value="value"
-        type="text"
+        :type="type"
         v-on="{ ...$listeners, input: inputFunc }"
       />
     </div>
@@ -32,6 +32,10 @@ export default {
       type: String,
       default: '',
     },
+    type: {
+      type: String,
+      default: 'text'
+    }
   },
   methods:{
     inputFunc(e){
